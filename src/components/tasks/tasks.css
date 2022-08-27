@@ -1,0 +1,31 @@
+.task-wrapper {
+  border: skyblue solid 2px;
+  font-size: 20px;
+  border-radius: 20px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 20px;
+}
+.task-name {
+  margin-left: 20px;
+  width: 85%;
+}
+.task-status-block {
+  margin-right: 20px;
+}
+
+.delete-todo,
+.check-todo {
+  display: inline-block;
+}
+
+.check-todo {
+  margin-left: 20px;
+}
+
+svg {
+  display: inline-block;
+  height: 25px;
+}
