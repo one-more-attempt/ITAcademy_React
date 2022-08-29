@@ -1,23 +1,59 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { TableRow } from "./components/TableRow/table_row";
+import { Header } from "./components/Header/header";
 
 function App() {
+  const ShopName = 'iShop';
+  const dataBase = [
+    {
+      id: 1,
+      category: "Smartphone",
+      name: "Google Pixel",
+      price: 250,
+      quantityLeft: 15,
+      pictureURL: "https://www.computerhope.com/jargon/n/notebook.jpg",
+    },
+    {
+      id: 2,
+      category: "Notebook",
+      name: "Dell",
+      price: 200,
+      quantityLeft: 12,
+      pictureURL: "https://www.computerhope.com/jargon/n/notebook.jpg",
+    },
+    {
+      id: 3,
+      category: "Smart-watch",
+      name: "Samsung",
+      price: 100,
+      quantityLeft: 15,
+      pictureURL: "https://www.computerhope.com/jargon/n/notebook.jpg",
+    },
+    {
+      id: 4,
+      category: "Keyboard",
+      name: "Gigabyte",
+      price: 50,
+      quantityLeft: 10,
+      pictureURL: "https://www.computerhope.com/jargon/n/notebook.jpg",
+    },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  <Header shopName = {ShopName}/>
+      {dataBase.map((item) => {
+        return (
+          <TableRow
+            category={item.category}
+            name={item.name}
+            price={item.price}
+            quantity={item.quantityLeft}
+            imgURL={item.pictureURL}
+          />
+        );
+      })}
     </div>
   );
 }
