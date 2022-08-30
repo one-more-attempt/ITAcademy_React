@@ -51,6 +51,7 @@ function App() {
             price={item.price}
             quantity={item.quantityLeft}
             imgURL={item.pictureURL}
+            key = {item.id}
           />
         );
       })}
