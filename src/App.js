@@ -4,7 +4,7 @@ import { TableRow } from "./components/Product/Product";
 import { Header } from "./components/Store/Store";
 
 function App() {
-  const ShopName = 'iShop';
+  const ShopName = 'iShop2';
   const dataBase = [
     {
       id: 1,

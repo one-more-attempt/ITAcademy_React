@@ -18,7 +18,7 @@ export function TableRow(props) {
       setItemStatus((previousState) => !previousState);
     }
   };
- 
+
   if (itemStatus) {
     return (
       <div className="row-wrapper">
