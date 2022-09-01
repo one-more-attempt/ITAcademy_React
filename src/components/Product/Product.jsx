@@ -18,8 +18,7 @@ export function TableRow(props) {
       setItemStatus((previousState) => !previousState);
     }
   };
-
-  const deleteConfirmation = () => {};
+ 
   if (itemStatus) {
     return (
       <div className="row-wrapper">

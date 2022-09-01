@@ -28,17 +28,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-.item-name-wrapper{
-  
-}
-
-
-.item-price {
-}
-.number-of-items {
-}
-.item-pic {
-}
 
 img {
   height: 75px;
@@ -47,9 +36,6 @@ img {
 .item-category {
   /* color: rgb(91, 91, 238); */
   font-size: 20px;
-}
-
-p {
 }
 
 .selected{
