@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { TableRow } from "./components/TableRow/table_row";
-import { Header } from "./components/Header/header";
+import { TableRow } from "./components/Product/Product";
+import { Header } from "./components/Store/Store";
 
 function App() {
   const ShopName = 'iShop';

@@ -11,7 +11,7 @@ body {
 }
 .row-wrapper {
   width: 80%;
-  height: 125px;
+  height: 75px;
   /* border: 1px solid black; */
   border-radius: 10px;
   margin: 0 auto;
@@ -24,10 +24,14 @@ body {
 .number-of-items,
 .item-pic {
   width: 25%;
-  border: 1px solid black;
+  border: 1px dotted black;
   justify-content: center;
   align-items: center;
 }
+.item-name-wrapper{
+  
+}
+
 
 .item-price {
 }
@@ -37,12 +41,18 @@ body {
 }
 
 img {
-  height: 125px;
+  height: 75px;
   border-radius: 10px;
 }
-span {
-  color: rgb(91, 91, 238);
+.item-category {
+  /* color: rgb(91, 91, 238); */
   font-size: 20px;
 }
+
 p {
+}
+
+.selected{
+  color: skyblue;
+  font-weight: 700;
 }
