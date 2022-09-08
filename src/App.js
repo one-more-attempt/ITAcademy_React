@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Filter } from "./components/filter/filter";
 import { SearchOptions } from "./components/SearchOptions/SearchOptions";
 import axios from "axios";
+
 function App() {
   const [dataBase, setDataBase] = useState([
     { title: "california", id: 1 },
@@ -19,11 +20,17 @@ function App() {
   const serverURL = "https://jsonplaceholder.typicode.com/albums/";
 
   useEffect(() => {
-    axios.get(serverURL).then((resp) => {
-      console.log(resp.data);
-      setDataBase(resp.data);
-      setFilterDB(resp.data);
-    });
+    axios
+      .get(serverURL)
+      .then((resp) => {
+        if (!!resp.data) {
+          setDataBase(resp.data);
+          setFilterDB(resp.data);
+        }
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
   }, []);
 
   const [FilterDB, setFilterDB] = useState(dataBase);
