@@ -1,31 +1,45 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Filter } from "./components/filter/filter";
 import { SearchOptions } from "./components/SearchOptions/SearchOptions";
+import axios from "axios";
 function App() {
   const [dataBase, setDataBase] = useState([
-    { text: "california", id: 1 },
-    { text: "everything", id: 2 },
-    { text: "aboveboard", id: 3 },
-    { text: "washington", id: 4 },
-    { text: "basketball", id: 5 },
-    { text: "weathering", id: 6 },
-    { text: "characters", id: 7 },
-    { text: "literature", id: 8 },
-    { text: "contraband", id: 9 },
-    { text: "appreciate", id: 10 },
+    { title: "california", id: 1 },
+    { title: "everything", id: 2 },
+    { title: "aboveboard", id: 3 },
+    { title: "washington", id: 4 },
+    { title: "basketball", id: 5 },
+    { title: "weathering", id: 6 },
+    { title: "characters", id: 7 },
+    { title: "literature", id: 8 },
+    { title: "contraband", id: 9 },
+    { title: "appreciate", id: 10 },
   ]);
+
+  const serverURL = "https://jsonplaceholder.typicode.com/albums/";
+
+  useEffect(() => {
+    fetch(serverURL)
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log(data);
+        setDataBase(data);
+        setFilterDB(data);
+      });
+  }, []);
+
   const [FilterDB, setFilterDB] = useState(dataBase);
 
   const searchHandler = (val) => {
     const searchDB = FilterDB.filter((element) => {
-      return element.text.toLowerCase().includes(val.toLowerCase());
+      return element.title.toLowerCase().includes(val.toLowerCase());
     });
     setDataBase(searchDB);
   };
 
   const alphaSorthandler = () => {
     const alphaSort = [...dataBase].sort((prev, next) =>
-    prev.text > next.text ? 28 : -28
+      prev.title > next.title ? 28 : -28
     );
     setDataBase(alphaSort);
   };
@@ -34,7 +48,7 @@ function App() {
     const defaultSort = [...dataBase].sort((prev, next) =>
       prev.id > next.id ? 28 : -28
     );
-    setDataBase(defaultSort)
+    setDataBase(defaultSort);
   };
 
   return (
@@ -42,7 +56,7 @@ function App() {
       <SearchOptions
         searchHandler={searchHandler}
         alphaSorthandler={alphaSorthandler}
-        defaultSortHandler = {defaultSortHandler}
+        defaultSortHandler={defaultSortHandler}
       />
       <Filter arr={dataBase} />
     </div>
