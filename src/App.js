@@ -19,13 +19,11 @@ function App() {
   const serverURL = "https://jsonplaceholder.typicode.com/albums/";
 
   useEffect(() => {
-    fetch(serverURL)
-      .then((resp) => resp.json())
-      .then((data) => {
-        console.log(data);
-        setDataBase(data);
-        setFilterDB(data);
-      });
+    axios.get(serverURL).then((resp) => {
+      console.log(resp.data);
+      setDataBase(resp.data);
+      setFilterDB(resp.data);
+    });
   }, []);
 
   const [FilterDB, setFilterDB] = useState(dataBase);
