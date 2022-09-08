@@ -19,11 +19,19 @@ function App() {
   const serverURL = "https://jsonplaceholder.typicode.com/albums/";
 
   useEffect(() => {
-    axios.get(serverURL).then((resp) => {
-      console.log(resp.data);
-      setDataBase(resp.data);
-      setFilterDB(resp.data);
-    });
+    fetch(serverURL)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not OK");
+        } else return response.json();
+      })
+      .then((data) => {
+        setDataBase(data);
+        setFilterDB(data);
+      })
+      .catch((error) => {
+        alert(error);
+      });
   }, []);
 
   const [FilterDB, setFilterDB] = useState(dataBase);
