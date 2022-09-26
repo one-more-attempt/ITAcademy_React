@@ -22,6 +22,7 @@ export function NewElement({
     setEditMode(false);
     setAddMode(true);
     setButtonStatus(true);
+    setSelectRule(false)
     setDBState(
       DBState.map((item) => {
         return { ...item, active: false };
