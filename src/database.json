@@ -1,0 +1,41 @@
+{
+  "dataBase": [
+    {
+      "id": 1,
+      "category": "Smartphone",
+      "name": "Google Pixel",
+      "price": 250,
+      "quantityLeft": 15,
+      "pictureURL": "https://www.computerhope.com/jargon/n/notebook.jpg",
+      "active": false
+    },
+    {
+      "id": 2,
+      "category": "Notebook",
+      "name": "Dell",
+      "price": 200,
+      "quantityLeft": 12,
+      "pictureURL": "https://www.computerhope.com/jargon/n/notebook.jpg",
+      "active": false
+    },
+    {
+      "id": 3,
+      "category": "Smart-watch",
+      "name": "Samsung",
+      "price": 100,
+      "quantityLeft": 15,
+      "pictureURL": "https://www.computerhope.com/jargon/n/notebook.jpg",
+      "active": false
+    },
+    {
+      "id": 4,
+      "category": "Keyboard",
+      "name": "Gigabyte",
+      "price": 50,
+      "quantityLeft": 10,
+      "pictureURL": "https://www.computerhope.com/jargon/n/notebook.jpg",
+      "active": false
+    }
+  ]
+
+}
