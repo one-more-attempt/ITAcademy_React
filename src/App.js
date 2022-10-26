@@ -1,10 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
-import RainbowFrame from "./components/RainbowFrame/RainbowFrame";
-const colorArray = ["orange", "blue", "green", "red", "skyblue"];
-const text = `RAINBOW BOOM!`;
+import { ToDoList } from "./components/TodoList";
+
 function App() {
-  return <RainbowFrame text={text} colors={colorArray} />;
+  return <ToDoList />;
 }
 
 export default App;

@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+.toDoWrapper {
+  border: 1px solid skyblue;
+  margin: 10px;
+  padding: 10px;
+  font-size: 20px;
+}
+.toDoParams {
+  border: 2px solid green;
+  margin: 10px;
+  padding: 10px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+input {
+  height: 40px;
+  font-size: 20px;
+}
+button {
+  height: 45px;
+  width: 25%;
+}
