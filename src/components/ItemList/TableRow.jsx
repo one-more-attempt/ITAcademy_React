@@ -1,9 +1,10 @@
 import "./table-row.css";
-import { useState } from "react";
+import { useState, useReducer } from "react";
 import { useContext } from "react";
 import { StatusContext } from "./ItemList";
 import { ItemCard } from "./ItemCard";
-
+import { INITIAL_STATE, countReducer } from "../reducer/reducer";
+import addToOrder from "../ItemList/ItemList";
 export function TableRow({
   setGlobalModalStatus,
   globalModalStatus,
@@ -51,7 +52,7 @@ export function TableRow({
   const setSelectedItem = () => {
     if (selectRule) {
       setEditMode(false);
-      setAddMode(false)
+      setAddMode(false);
       changeArray();
     }
   };

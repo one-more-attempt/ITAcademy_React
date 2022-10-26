@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.ADDBUTTON {
+  display: flex;
+  width: 75%;
+  margin: 0 auto;
+  /* align-items: flex-end; */
+  justify-content: flex-end;
+  color: red;
+}

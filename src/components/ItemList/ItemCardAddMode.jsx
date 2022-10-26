@@ -36,7 +36,7 @@ export const ItemCardAddMode = ({
       changeToBlock();
     }
     setNewName(e.target.value);
-    setSelectRule(false)
+    setSelectRule(false);
   };
 
   const priceValue = (e) => {
@@ -46,7 +46,7 @@ export const ItemCardAddMode = ({
       changeToBlock();
     }
     setNewPrice(e.target.value);
-    setSelectRule(false)
+    setSelectRule(false);
   };
 
   const quantityValue = (e) => {
@@ -56,8 +56,7 @@ export const ItemCardAddMode = ({
       changeToBlock();
     }
     setNewQuantityValue(e.target.value);
-    setSelectRule(false)
-
+    setSelectRule(false);
   };
 
   const categoryValue = (e) => {
@@ -67,14 +66,14 @@ export const ItemCardAddMode = ({
       changeToBlock();
     }
     setNewCategory(e.target.value);
-    setSelectRule(false)
+    setSelectRule(false);
   };
 
   const onCreate = () => {
     if (newName && newPrice) {
       setButtonStatus(false);
       setSaveButtonStatus(false);
-      setIdCounter(++IdCounter)
+      setIdCounter(++IdCounter);
       const newElement = {
         id: ++IdCounter,
         category: newCategory,
@@ -84,13 +83,9 @@ export const ItemCardAddMode = ({
         pictureURL: "https://www.computerhope.com/jargon/n/notebook.jpg",
         active: false,
       };
-      //   ??????????????????????????????????????????????
-      const tmpArr = DBState.map((item) => {
-        return { ...item, active: false };
-      });
-      tmpArr.push(newElement);
-      setDBState(tmpArr);
-      setSelectRule(true)
+
+      setDBState([...DBState, newElement]);
+      setSelectRule(true);
     }
   };
   const onCancel = () => {
